@@ -7,3 +7,10 @@ install(
     TARGETS gravity_compensation
     DESTINATION lib
     )
+
+
+add_executable(try try.cpp )
+
+target_link_libraries(try
+    xbot2::xbot2   
+)

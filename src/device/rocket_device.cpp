@@ -7,6 +7,9 @@ Hal::RocketDriverContainer::RocketDriverContainer(std::vector<Hal::DeviceInfo> d
     DeviceContainer(devinfo),
     _srv_alive(false)
 {
+    
+    std::cout << "culo" << std::endl;
+    
     std::vector<DeviceRt::Ptr> devs;
 
     std::copy(get_device_vector().begin(),

@@ -4,6 +4,9 @@ XBotInterface:
   urdf_path: "config/teleop_fixed_base.urdf"
   srdf_path: "config/teleop_fixed_base.srdf"
 
+RobotInterface:
+  framework_name: "ROS"
+  
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "false"
@@ -22,10 +25,10 @@ xbotcore_devices:
         master: true  # this is a master device for all 'joint' devices
         thread: rt_main
         
-    rocket:
-        names: [rocket_0]
-        type: rocket
-        thread: rt_main
+    #rocket:
+    #    names: [rocket_0]
+    #    type: rocket
+    #    thread: rt_main
 
 
 # define threads to be created
@@ -72,11 +75,11 @@ xbotcore_plugins:
         thread: rt_main
         type: homing_example
 
-    homing_slow:
-        thread: rt_main
-        type: homing_example
-        params:
-            time: {value: 10, type: double}
+    #homing_slow:
+        #thread: rt_main
+        #type: homing_example
+        #params:
+            #time: {value: 10, type: double}
             
     homing_custom:
         thread: rt_main
@@ -110,6 +113,10 @@ xbotcore_plugins:
         remap:
             input_small: topic_small
             input_big: topic_big
+        
+    gravity_compensation:
+        thread: rt_main
+        type: gravity_compensation
 
 
 # additional parameters that don't relate to any plugin 

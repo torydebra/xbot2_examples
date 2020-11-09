@@ -36,6 +36,7 @@ private:
 
     Eigen::VectorXd _q_start;
     Eigen::VectorXd gravity_vector;
+    XBot::ModelInterface::Ptr model;
     //double _homing_time;
     //double _fake_time;
 
